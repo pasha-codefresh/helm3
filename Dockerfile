@@ -9,6 +9,7 @@ RUN apk add --no-cache git
 RUN apk add --update \
     curl \
     && rm -rf /var/cache/apk/*
+RUN apk add --no-cache bash
 
 ARG HELM_VERSION
 ARG S3_PLUGIN_VERSION
