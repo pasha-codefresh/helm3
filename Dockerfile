@@ -31,9 +31,9 @@ RUN curl -L "https://get.helm.sh/helm-v3.0.3-linux-amd64.tar.gz" -o helm.tar.gz 
 
 FROM codefresh/kube-helm:3.0.3
 ARG HELM_VERSION
-COPY /temp /root/.helm/* /root/.helm/
-
-COPY /root/.config /root/.helm
+#COPY /temp /root/.helm/* /root/.helm/
+#
+#COPY /root/.config /root/.helm
 
 ENV HELM_VERSION 3.0.3
 
