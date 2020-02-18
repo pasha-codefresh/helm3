@@ -3,7 +3,13 @@ ARG S3_PLUGIN_VERSION
 ARG GCS_PLUGIN_VERSION
 ARG PUSH_PLUGIN_VERSION
 
-FROM git:latest
+FROM alpine
+
+RUN apk add --no-cache git
+RUN apk add --update \
+    curl \
+    && rm -rf /var/cache/apk/*
+
 ARG HELM_VERSION
 ARG S3_PLUGIN_VERSION
 ARG GCS_PLUGIN_VERSION
