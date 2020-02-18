@@ -26,6 +26,8 @@ FROM codefresh/kube-helm:3.0.3
 ARG HELM_VERSION
 COPY --from=setup /temp /root/.helm/* /root/.helm/
 
+COPY /root/.config /root/.helm
+
 ENV HELM_VERSION 3.0.3
 
 ENTRYPOINT ["/opt/bin/release_chart"]
