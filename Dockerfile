@@ -31,7 +31,7 @@ RUN ls /root/.helm
 
 FROM codefresh/kube-helm:3.0.3
 ARG HELM_VERSION
-COPY /root/.helm/* /root/.helm/
+COPY /root/.helm/ /root/.helm/
 #
 #COPY /root/.config /root/.helm
 
