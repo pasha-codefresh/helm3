@@ -36,7 +36,10 @@ ENV XDG_DATA_HOME=/root/.helm
 ENV XDG_CONFIG_HOME=/root/.helm
 
 #ARG HELM_VERSION
-COPY --from=tt /temp /root/.helm/* /root/.helm/
+
+COPY --from=tt /root/.helm/ /root/.helm/
+
+#COPY --from=tt /temp /root/.helm/* /root/.helm/
 #
 #COPY /root/.config /root/.helm
 
