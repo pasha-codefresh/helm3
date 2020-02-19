@@ -30,6 +30,11 @@ RUN ls /root/.helm
 
 #
 FROM codefresh/kube-helm:3.0.3
+
+ENV XDG_CACHE_HOME=/root/.helm
+ENV XDG_DATA_HOME=/root/.helm
+ENV XDG_CONFIG_HOME=/root/.helm
+
 #ARG HELM_VERSION
 COPY --from=tt /temp /root/.helm/* /root/.helm/
 #
