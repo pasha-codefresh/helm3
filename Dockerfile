@@ -40,3 +40,5 @@ COPY --from=tt /temp /root/.helm/* /root/.helm/
 #
 #COPY /root/.config /root/.helm
 
+RUN ls /root/.helm
+
