@@ -27,11 +27,11 @@ RUN curl -L "https://get.helm.sh/helm-v3.0.3-linux-amd64.tar.gz" -o helm.tar.gz 
     && helm plugin install https://github.com/chartmuseum/helm-push.git
 
 RUN ls /root/.helm
-RUN ls /root/.cache
+#RUN ls /root/.cache
 
 FROM codefresh/kube-helm:3.0.3
 ARG HELM_VERSION
-#COPY /temp /root/.helm/* /root/.helm/
+COPY /root/.helm/* /root/.helm/
 #
 #COPY /root/.config /root/.helm
 
