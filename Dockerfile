@@ -1,6 +1,6 @@
 ARG HELM_VERSION
 
-FROM alpine
+FROM alpine as tt
 
 RUN apk add --no-cache git
 RUN apk add --update \
@@ -27,11 +27,11 @@ RUN curl -L "https://get.helm.sh/helm-v3.0.3-linux-amd64.tar.gz" -o helm.tar.gz 
     && helm plugin install https://github.com/chartmuseum/helm-push.git
 
 RUN ls /root/.helm
-COPY /root/.helm/ /root/.helm/
 
-FROM codefresh/kube-helm:3.0.3
-ARG HELM_VERSION
-
+#
+#FROM codefresh/kube-helm:3.0.3
+#ARG HELM_VERSION
+#COPY --from tt /root/.helm/ /root/.helm/
 #
 #COPY /root/.config /root/.helm
 
